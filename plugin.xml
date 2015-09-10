@@ -1,28 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<plugin id="com.imagenproactiva.irplugin" version="0.0.1" xmlns="http://www.phonegap.com/ns/plugins/1.0">
+<?xml version="1.0" encoding="utf-8"?>
+<plugin 
+    xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.imagenproactiva.irplugin" 
+    version="0.0.1">
+    
     <name>Ir</name>
     <description>IR Plugin</description>
     <license>MIT</license>
     <keywords>IR,infrared</keywords>
 
+    <engines>
+        <engine name="cordova" version=">=2.9.0" />
+    </engines>
 
-    <js-module name="Ir" src="www/ir.js">
+    <js-module src="www/ir.js" name="Ir">
         <clobbers target="window.ir" />
     </js-module>
 
     <!-- android -->
     <platform name="android">
-        <config-file parent="/*" target="res/xml/config.xml">
+
+        <config-file target="res/xml/config.xml" parent="/widget">
             <feature name="Ir">
-                <param name="android-package" value="com.imagenproactiva.irplugin.Ir" />
+                <param name="android-package" value="com.imagenproactiva.irplugin.Ir"/>
             </feature>
         </config-file>
-
+        
         <source-file src="src/android/Ir.java" target-dir="src/cesarve77/ir/" />
-        <config-file parent="/*" target="AndroidManifest.xml">
-            <uses-permission android:name="android.permission.TRANSMIT_IR"
-                android:required="false" />
+
+        <!-- kludge for 2.9 -->
+        <source-file src="src/android/org/apache/cordova/api/Dummy.java"
+            target-dir="src/org/apache/cordova/api"/>
+
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.TRANSMIT_IR" />
             <uses-feature android:name="android.hardware.consumerir" />
         </config-file>
     </platform>
