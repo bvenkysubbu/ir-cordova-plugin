@@ -3,7 +3,7 @@
     xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.imagenproactiva.irplugin" 
-    version="0.0.1">
+    version="0.0.2">
     
     <name>Ir</name>
     <description>IR Plugin</description>
