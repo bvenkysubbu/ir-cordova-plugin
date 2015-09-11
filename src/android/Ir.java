@@ -42,7 +42,7 @@ public class Ir extends CordovaPlugin {
                 final Context context = this.cordova.getActivity().getApplicationContext();
                 this.cordova.getThreadPool().execute(new Runnable() {
                     public void run() {
-                        irService = (ConsumerIrManager)context.getSystemService(context.CONSUMER_IR_SERVICE);
+                        ConsumerIrManager irService = (ConsumerIrManager)context.getSystemService(context.CONSUMER_IR_SERVICE);
                         // transmit the pattern at 38.4KHz
 
                         if (android.os.Build.VERSION.SDK_INT == 19) {
