@@ -27,7 +27,7 @@
             </feature>
         </config-file>
         
-        <source-file src="src/android/Ir.java" target-dir="src/cesarve77/ir/"/>
+        <source-file src="src/android/Ir.java" target-dir="src/"/>
 
         <!-- kludge for 2.9 -->
         <source-file src="src/android/org/apache/cordova/api/Dummy.java"
