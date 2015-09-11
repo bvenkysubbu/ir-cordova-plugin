@@ -54,13 +54,13 @@ public class Ir extends CordovaPlugin {
                                 for (int i = 0; i < signal.length; ++i) {
                                     signal[i] = signal[i] * t;
                                 }
-                                irService.transmit(38400, signal);
+                                irService.transmit(frequency, signal);
                             } else {
-                                irService.transmit(38400, signal);
+                                irService.transmit(frequency, signal);
                             }
 
                         }
-                        callbackContext.success("aja");
+                        callbackContext.success("IR Code Transmitted");
                     }
                 });
             }
@@ -71,7 +71,7 @@ public class Ir extends CordovaPlugin {
                 )
 
         {
-            callbackContext.error("java ".concat(e.getMessage()));
+            callbackContext.error("ivalid action");
             return false;
         }
 
