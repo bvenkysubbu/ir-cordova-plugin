@@ -1,6 +1,12 @@
 package com.imagenproactiva.irplugin;
 
-import org.apache.cordova.CordovaPlugin;
+// kludgy imports to support 2.9 and 3.0 due to package changes
+import org.apache.cordova.*;
+// import org.apache.cordova.CordovaArgs;
+// import org.apache.cordova.CordovaPlugin;
+// import org.apache.cordova.CallbackContext;
+// import org.apache.cordova.PluginResult;
+// import org.apache.cordova.LOG;
 
 import android.hardware.ConsumerIrManager;
 
