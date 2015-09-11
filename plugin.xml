@@ -21,13 +21,13 @@
     <!-- android -->
     <platform name="android">
 
-        <config-file target="res/xml/config.xml" parent="/widget">
+        <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Ir">
                 <param name="android-package" value="com.imagenproactiva.irplugin.Ir"/>
             </feature>
         </config-file>
         
-        <source-file src="src/android/Ir.java" target-dir="src/cesarve77/ir/" />
+        <source-file src="src/android/Ir.java" target-dir="src/cesarve77/ir/"/>
 
         <!-- kludge for 2.9 -->
         <source-file src="src/android/org/apache/cordova/api/Dummy.java"
