@@ -3,7 +3,7 @@
     xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.imagenproactiva.irplugin" 
-    version="0.0.3">
+    version="0.0.4">
     
     <name>Ir</name>
     <description>IR Plugin</description>
@@ -27,7 +27,7 @@
             </feature>
         </config-file>
         
-        <source-file src="src/android/Ir.java" target-dir="src/"/>
+        <source-file src="src/android/Ir.java" target-dir="src/cesarve77/ir/"/>
 
         <!-- kludge for 2.9 -->
         <source-file src="src/android/org/apache/cordova/api/Dummy.java"
