@@ -32,7 +32,6 @@ public class Ir extends CordovaPlugin {
     public boolean execute(String action, JSONArray jsonArgs, final CallbackContext callbackContext) throws JSONException {
         try {
             if (ACTION_TRANSMIT_IR_CODE.equals(action)) {
-                Log.d("TransmitIR", "Parsing frequency and signal");
                 JSONObject args = jsonArgs.getJSONObject(0);
                 final Integer frequency = args.getInt("frequency");
                 JSONArray signalJson = args.getJSONArray("signal");
@@ -45,7 +44,7 @@ public class Ir extends CordovaPlugin {
                     public void run() {
                         ConsumerIrManager irService = (ConsumerIrManager)context.getSystemService(context.CONSUMER_IR_SERVICE);
                         // transmit the pattern at 38.4KHz
-                        Log.d("TransmitIR", "IR should be transmitting");
+                        
 
                         if (android.os.Build.VERSION.SDK_INT == 19) {
                             int lastIdx = android.os.Build.VERSION.RELEASE.lastIndexOf(".");
@@ -63,7 +62,7 @@ public class Ir extends CordovaPlugin {
 
                         }
                         callbackContext.success("IR Code Transmitted");
-                        Log.d("TransmitIR", "IR should have transmitted");
+                        
                     }
                 });
             }
@@ -71,12 +70,12 @@ public class Ir extends CordovaPlugin {
 
         } catch (
                 Exception e
-                Log.e("TransmitIR", "For some reason it didn't work");
+                
                 )
 
         {
             callbackContext.error("ivalid action");
-            Log.e("TransmitIR", "Something went wrong");
+            
             return false;
         }
 
