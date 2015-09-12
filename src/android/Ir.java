@@ -47,26 +47,8 @@ public class Ir extends CordovaPlugin {
                     public void run() {
                         ConsumerIrManager irService = (ConsumerIrManager)context.getSystemService(context.CONSUMER_IR_SERVICE);
                         // transmit the pattern at 38.4KHz
-                        Log.d(TAG, "lets go");
-                        
-
-                        if (android.os.Build.VERSION.SDK_INT == 19) {
-                            int lastIdx = android.os.Build.VERSION.RELEASE.lastIndexOf(".");
-                            int VERSION_MR = Integer.valueOf(android.os.Build.VERSION.RELEASE.substring(lastIdx + 1));
-                            if (VERSION_MR < 3) {
-                                int t = 1000000 / frequency;
-
-                                for (int i = 0; i < signal.length; ++i) {
-                                    signal[i] = signal[i] * t;
-                                }
-                                Log.d(TAG, "ir blink");
-                                irService.transmit(frequency, signal);
-                            } else {
-                                Log.d(TAG, "ir blink");
-                                irService.transmit(frequency, signal);
-                            }
-
-                        }
+                        Log.d(TAG, "ir blink");
+                        irService.transmit(frequency, signal);
                         callbackContext.success("IR Code Transmitted");
                         
                     }
