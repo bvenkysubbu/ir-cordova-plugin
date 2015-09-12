@@ -26,10 +26,13 @@ import java.lang.Runnable;
 
 public class Ir extends CordovaPlugin {
     public static final String ACTION_TRANSMIT_IR_CODE = "transmit";
+    
+    private static final String TAG = "IRtransmit";
 
 
     @Override
     public boolean execute(String action, JSONArray jsonArgs, final CallbackContext callbackContext) throws JSONException {
+        LOG.d(TAG, "action = " + action);
         try {
             if (ACTION_TRANSMIT_IR_CODE.equals(action)) {
                 JSONObject args = jsonArgs.getJSONObject(0);
@@ -44,6 +47,7 @@ public class Ir extends CordovaPlugin {
                     public void run() {
                         ConsumerIrManager irService = (ConsumerIrManager)context.getSystemService(context.CONSUMER_IR_SERVICE);
                         // transmit the pattern at 38.4KHz
+                        Log.d(TAG, "lets go");
                         
 
                         if (android.os.Build.VERSION.SDK_INT == 19) {
