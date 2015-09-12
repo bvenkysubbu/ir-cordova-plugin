@@ -32,7 +32,7 @@ public class Ir extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray jsonArgs, final CallbackContext callbackContext) throws JSONException {
-        LOG.d(TAG, "action = " + action);
+        Log.d(TAG, "action = " + action);
         try {
             if (ACTION_TRANSMIT_IR_CODE.equals(action)) {
                 JSONObject args = jsonArgs.getJSONObject(0);
@@ -59,8 +59,10 @@ public class Ir extends CordovaPlugin {
                                 for (int i = 0; i < signal.length; ++i) {
                                     signal[i] = signal[i] * t;
                                 }
+                                Log.d(TAG, "ir blink");
                                 irService.transmit(frequency, signal);
                             } else {
+                                log.d(TAG, "ir blink");
                                 irService.transmit(frequency, signal);
                             }
 
