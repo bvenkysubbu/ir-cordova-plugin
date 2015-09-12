@@ -32,7 +32,7 @@ public class Ir extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray jsonArgs, final CallbackContext callbackContext) throws JSONException {
-        Log.d(TAG, "action = " + action);
+        LOG.d(TAG, "action = " + action);
         try {
             if (ACTION_TRANSMIT_IR_CODE.equals(action)) {
                 JSONObject args = jsonArgs.getJSONObject(0);
