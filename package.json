@@ -1,0 +1,19 @@
+{
+  "name": "ir-cordova-plugin",
+  "version": "1.0.0",
+  "description": "bvenkysubbu took it from cesarve77/ir-cordova-plugin",
+  "main": "ir.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bvenkysubbu/ir-cordova-plugin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bvenkysubbu/ir-cordova-plugin/issues"
+  },
+  "homepage": "https://github.com/bvenkysubbu/ir-cordova-plugin#readme"
+}
